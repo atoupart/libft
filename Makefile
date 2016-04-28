@@ -6,7 +6,7 @@
 #    By: atoupart <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/02 10:08:38 by atoupart          #+#    #+#              #
-#    Updated: 2016/01/15 10:53:16 by atoupart         ###   ########.fr        #
+#    Updated: 2016/04/28 12:31:26 by atoupart         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -73,7 +73,8 @@ SRCS	= ft_atoi.c\
 		ft_lstdel.c\
 		ft_lstdelone.c\
 		ft_lstiter.c\
-		ft_lstmap.c
+		ft_lstmap.c\
+		get_next_line.c
 
 CFLAGS	= -Wall -Wextra -Werror
 

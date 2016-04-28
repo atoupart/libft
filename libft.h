@@ -16,6 +16,11 @@
 # include <string.h>
 # include <unistd.h>
 # include <stdlib.h>
+# include <stdio.h>
+# include <sys/syslimits.h>
+# include <sys/stat.h>
+# include <sys/types.h>
+# include <fcntl.h>
 
 typedef struct		s_list
 {
@@ -24,6 +29,7 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
+int					get_next_line(int const fd, char **line);
 void				*ft_memset(void *b, int c, size_t len);
 void				ft_bzero(void *s, size_t n);
 void				*ft_memcpy(void *dst, const void *src, size_t n);
