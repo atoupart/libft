@@ -1,40 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin2.c                                      :+:      :+:    :+:   */
+/*   ft_strdup_f.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atoupart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/06 17:04:21 by atoupart          #+#    #+#             */
-/*   Updated: 2015/12/11 18:16:08 by atoupart         ###   ########.fr       */
+/*   Created: 2016/04/18 11:55:26 by atoupart          #+#    #+#             */
+/*   Updated: 2016/04/18 11:55:38 by atoupart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strdup_f(char **s1)
 {
-	char	*res;
-	int		i;
-	int		j;
-
-	i = 0;
-	j = 0;
-	if (!s1 || !s2)
+	int		len;
+	char	*dup;
+ 
+	len = ft_strlen(*s1);
+	dup = (char *)malloc(sizeof(*dup) * (len + 1));
+	if (dup == NULL)
 		return (NULL);
-	res = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
-	if (!res)
-		return (NULL);
-	while (s1[i])
-	{
-		res[i] = s1[i];
-		i++;
-	}
-	while (s2[j])
-	{
-		res[i + j] = s2[j];
-		j++;
-	}
-	res[i + j] = 0;
-	return (res);
+	ft_strcpy(dup, *s1);
+	ft_strdel(s1);
+	return (dup);
 }

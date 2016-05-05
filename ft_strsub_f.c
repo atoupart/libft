@@ -21,8 +21,6 @@ char	*ft_strsub_f(char **str, unsigned int start, size_t n)
 	tmp = ft_strnew(n);
 	if (tmp)
 		ft_strncpy(tmp, *str + start, n);
-
 	ft_strdel(str);
-
 	return (tmp);
 }

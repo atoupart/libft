@@ -6,11 +6,11 @@
 /*   By: atoupart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/08 13:27:21 by atoupart          #+#    #+#             */
-/*   Updated: 2016/02/26 16:49:31 by atoupart         ###   ########.fr       */
+/*   Updated: 2016/05/04 18:54:20 by atoupart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "libft.h"
 
 int			before_while(char **str, char **line)
 {
@@ -54,7 +54,7 @@ int			get_next_line(int const fd, char **line)
 	char			*buf;
 	static char		*str[OPEN_MAX];
 
-	if (line == NULL || fd < 0 || fd > OPEN_MAX)
+	if (line == NULL || fd < 0)
 		return (-1);
 	if (before_while(&(str[fd]), line))
 		return (1);
