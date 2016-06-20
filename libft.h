@@ -24,12 +24,6 @@
 
 # define BUFF_SIZE 32
 
-# define ptc ft_putchar
-# define ptn ft_putnbr
-# define pts ft_putstr
-# define pte ft_putendl
-# define ptcn ft_putchar('\n')
-
 typedef struct		s_list
 {
 	void			*content;
@@ -37,6 +31,7 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
+int					ft_error(char *str);
 int					get_next_line(int const fd, char **line);
 void				*ft_memset(void *b, int c, size_t len);
 void				ft_bzero(void *s, size_t n);
@@ -60,6 +55,8 @@ char				*ft_strnstr(const char *s1, const char *s2, size_t n);
 int					ft_strcmp(const char *s1, const char *s2);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 int					ft_atoi(const char *str);
+int					ft_atoi_b(const char *str, int base);
+int					ft_ishexa(char *s);
 int					ft_isalpha(int c);
 int					ft_isdigit(int c);
 int					ft_isalnum(int c);

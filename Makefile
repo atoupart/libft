@@ -16,7 +16,9 @@ CC		= gcc
 RM		= /bin/rm -rf
 
 SRCS	= ft_atoi.c\
+		ft_atoi_b.c\
 		ft_bzero.c\
+		ft_ishexa.c\
 		ft_isalnum.c\
 		ft_isalpha.c\
 		ft_isspace.c\
@@ -77,7 +79,8 @@ SRCS	= ft_atoi.c\
 		ft_lstdelone.c\
 		ft_lstiter.c\
 		ft_lstmap.c\
-		get_next_line.c
+		get_next_line.c\
+		ft_error.c
 
 CFLAGS	= -Wall -Wextra -Werror
 
@@ -86,6 +89,7 @@ OBJ		= ${SRCS:%.c=.obj/%.o}
 FTO		= $(FTC:.c=.o)
 
 all: $(NAME)
+	@printf ""
 
 $(NAME): $(OBJ)
 		@echo ""

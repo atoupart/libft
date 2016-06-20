@@ -1,28 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_error.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atoupart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/01 19:07:22 by atoupart          #+#    #+#             */
-/*   Updated: 2015/12/03 18:08:32 by atoupart         ###   ########.fr       */
+/*   Created: 2016/05/26 16:39:34 by atoupart          #+#    #+#             */
+/*   Updated: 2016/05/26 16:39:43 by atoupart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi(const char *str)
+int		ft_error(char *str)
 {
-	int		n;
-	int		s;
-
-	n = 0;
-	while ((*str >= 9 && *str <= 13) || *str == ' ')
-		str++;
-	if ((s = (*str == '-' ? -1 : 1)) == -1 || *str == '+')
-		str++;
-	while (ft_isdigit(*str))
-		n = n * 10 + (*str++ - '0');
-	return (s * n);
+	ft_putstr_fd("\033[31m", 2);
+	ft_putstr_fd(str, 2);
+	ft_putstr_fd("\033[0m\n", 2);
+	exit(0);
+	return (0);
 }

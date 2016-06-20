@@ -1,28 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_ishexa.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atoupart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/01 19:07:22 by atoupart          #+#    #+#             */
-/*   Updated: 2015/12/03 18:08:32 by atoupart         ###   ########.fr       */
+/*   Created: 2016/05/18 14:38:36 by atoupart          #+#    #+#             */
+/*   Updated: 2016/05/18 14:38:38 by atoupart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi(const char *str)
+int		ft_ishexa(char *s)
 {
-	int		n;
-	int		s;
+	int		len;
 
-	n = 0;
-	while ((*str >= 9 && *str <= 13) || *str == ' ')
-		str++;
-	if ((s = (*str == '-' ? -1 : 1)) == -1 || *str == '+')
-		str++;
-	while (ft_isdigit(*str))
-		n = n * 10 + (*str++ - '0');
-	return (s * n);
+	len = 0;
+	if (s)
+	{
+		if (s[0] == '0' && (*(s + 1) == 'x' || *(s + 1) == 'X'))
+		{
+			len += 2;
+			s += 2;
+			while (*s && (ft_isdigit(*s) || ft_strchr("abcdefABCDEF", (int)*s)))
+			{
+				len++;
+				s++;
+			}
+		}
+	}
+	return (len);
 }
