@@ -6,7 +6,7 @@
 /*   By: atoupart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 12:18:42 by atoupart          #+#    #+#             */
-/*   Updated: 2015/12/11 18:16:29 by atoupart         ###   ########.fr       */
+/*   Updated: 2016/08/02 14:34:29 by lsimonne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ size_t		ft_strlen(const char *s)
 	size_t i;
 
 	i = 0;
-	while (s[i] != '\0')
+	while (s && s[i] != 0)
 		i++;
 	return (i);
 }

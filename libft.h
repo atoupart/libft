@@ -6,7 +6,7 @@
 /*   By: atoupart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/26 13:26:14 by atoupart          #+#    #+#             */
-/*   Updated: 2016/05/05 14:25:34 by atoupart         ###   ########.fr       */
+/*   Updated: 2016/08/02 10:44:51 by lsimonne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,8 @@ int					ft_isascii(int c);
 int					ft_isprint(int c);
 int					ft_toupper(int c);
 int					ft_tolower(int c);
+void				ft_str_tolower(char **str);
+void				ft_str_toupper(char **str);
 int					ft_isspace(int c);
 size_t				ft_strlen(const char *s);
 void				*ft_memalloc(size_t size);
@@ -84,6 +86,8 @@ char				*ft_strjoin_f(char **s1, char *s2);
 char				*ft_strtrim(char const *s);
 char				**ft_strsplit(char const *s, char c);
 char				*ft_itoa(int n);
+char				*ft_itoa_base(long long int n, int base);
+char				*ft_uitoa_base(unsigned long long n, int base);
 void				ft_putchar(char c);
 void				ft_putstr(char const *str);
 void				ft_putendl(char const *s);
@@ -92,6 +96,7 @@ void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(char const *s, int fd);
 void				ft_putendl_fd(char const *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
+void				ft_putlnbr(long long n);
 t_list				*ft_lstnew(void const *content, size_t content_size);
 void				ft_lstdelone(t_list **alst, void (*dsl)(void *, size_t));
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));

@@ -6,7 +6,7 @@
 /*   By: atoupart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/03 17:06:14 by atoupart          #+#    #+#             */
-/*   Updated: 2015/12/11 18:12:50 by atoupart         ###   ########.fr       */
+/*   Updated: 2016/08/03 17:28:05 by lsimonne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,8 @@ void	*ft_memalloc(size_t n)
 {
 	void	*s;
 
-	s = malloc(sizeof(*s) * n);
-	if (!s)
-		return (s);
-	if (s)
-	{
-		ft_bzero(s, n);
-		return (s);
-	}
-	else
+	if (!(s = malloc(sizeof(*s) * n)))
 		return (NULL);
+	ft_bzero(s, n);
+	return (s);
 }
