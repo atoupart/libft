@@ -21,6 +21,10 @@
 # include <sys/types.h>
 # include <sys/syslimits.h>
 # include <fcntl.h>
+# include <wchar.h>
+# include <stdarg.h>
+# include <math.h>
+# include <limits.h>
 
 # define BUFF_SIZE 32
 
@@ -103,5 +107,6 @@ void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstadd(t_list **alst, t_list *new_elem);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+int					ft_printf(const char *format, ...);
 
 #endif
